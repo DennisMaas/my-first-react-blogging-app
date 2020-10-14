@@ -1,5 +1,8 @@
 import React, {useState} from "react";
 import {StyledButton} from "./StyledButton";
+import {StyledForm} from "./StyledForm";
+import {StyledLabel} from "./StyledLabel";
+import {StyledInput} from "./StyledInput";
 
 export default function AddBlogEntryForm({onAddBlogEntry}){
     const  [blogTitle, setBlogTitle] = useState("");
@@ -14,25 +17,31 @@ export default function AddBlogEntryForm({onAddBlogEntry}){
     }
 
 
-    return <form>
-        <label>Title:
-            <input value={blogTitle}
+    return <StyledForm>
+        <StyledLabel>Title:
+            <StyledInput value={blogTitle}
                    onChange={event => setBlogTitle(event.target.value)}/>
-        </label>
+        </StyledLabel>
 
-        <label>Body:
-            <input value={blogBody}
-                   onChange={event => setBlogBody(event.target.value)}/>
-        </label>
+        <StyledLabel>Body:
+            <StyledInput value={blogBody}
+                         onChange={event => setBlogBody(event.target.value)}/>
+        </StyledLabel>
 
         <StyledButton
             disabled={
-                blogTitle.length === 0 && blogBody.length === 0
+                blogTitle.length === 0 || blogBody.length === 0
             }
-            type={"button"} onClick={
-                sendData}
+            type={"button"}
+            onClick={
+                ()=> {
+                    sendData();
+                    setBlogTitle("");
+                    setBlogBody("");
+                    }
+            }
         >Submit</StyledButton>
-    </form>
+    </StyledForm>
 
 
 }
