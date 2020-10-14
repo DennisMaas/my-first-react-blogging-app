@@ -3,7 +3,7 @@ import './App.css';
 import BlogEntry from "./components/BlogEntry";
 
 function App() {
-  const blogEntryData = {
+  const blogEntryData1 = {
     id: "1",
     title: "my first title",
     body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. " +
@@ -70,13 +70,28 @@ function App() {
         "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. ",
     image: "/img/4f828d05f82b8b7aedfe8be6a7d9d2a3.png"
   }
+  const blogEntryData4 = {
+    id: "4",
+    title: "my fourth title",
+    body: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. " +
+        "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, " +
+        "nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. " +
+        "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. " +
+        "In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. " +
+        "Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. " +
+        "Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, " +
+        "viverra quis, feugiat a, tellus. " +
+        "Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. ",
+    image: "/img/4f828d05f82b8b7aedfe8be6a7d9d2a3.png"
+  }
 
+  const blogList = [blogEntryData1,blogEntryData2,blogEntryData3,blogEntryData4];
 
   return (
     <div className="App">
-    <BlogEntry blogEntryData={blogEntryData}/>
-    <BlogEntry blogEntryData={blogEntryData2}/>
-    <BlogEntry blogEntryData={blogEntryData3}/>
+      {blogList
+          .filter(blogEntryData => blogEntryData.title.length > 0)
+          .map(blogEntryData => <BlogEntry key={blogEntryData.id} blogEntryData={blogEntryData}/>) }
     </div>
   );
 }
