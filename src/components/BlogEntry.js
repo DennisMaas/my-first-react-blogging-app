@@ -4,17 +4,23 @@ import BlogEntryHeadingImage from "./BlogEntryHeadingImage";
 import BlogEntryText from "./BlogEntryText";
 
 function BlogEntry({blogEntryData}){
-    const [likeCount, setCount] =useState(0)
-    function updateCounter(){
-        () => setCount(likeCount+1)
+    const [likeCount, setCount] = useState(0)
+    function updateCounterUp(){
+        setCount(likeCount+1)
+    }
+    const [disLikeCount, setDisLikeCount] = useState(0)
+    function updateCounterDown(){
+        setDisLikeCount(disLikeCount+1)
     }
     return (
         <article className={"blogarticle"}>
-            <span><BlogEntryHeading title={blogEntryData.title}/></span>
-            <BlogEntryHeadingImage img={blogEntryData.image}/>
-            <BlogEntryText body={blogEntryData.body}/>
-            <button onClick={updateCounter}>like it!</button>
-            <p>{likeCount} Leuten gefiel dieser Beitrag</p>
+            <span><BlogEntryHeading title={blogEntryData.blogTitle}/></span>
+            <BlogEntryHeadingImage img={blogEntryData.blogTitleImage}/>
+            <BlogEntryText body={blogEntryData.blogBody}/>
+            <button onClick={updateCounterUp}>like it!</button>
+            <p>{likeCount} Leute fanden´s witzig</p>
+            <button onClick={updateCounterDown}>hate it!</button>
+            <p>{disLikeCount} Leute fanden´s doof</p>
         </article>
     )
 }
