@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import BlogEntryHeading from "./BlogEntryHeading";
 import BlogEntryHeadingImage from "./BlogEntryHeadingImage";
 import BlogEntryText from "./BlogEntryText";
+import {StyledButton} from "./StyledButton";
 
 function BlogEntry({blogEntryData}){
     const [likeCount, setCount] = useState(0)
@@ -17,9 +18,9 @@ function BlogEntry({blogEntryData}){
             <BlogEntryHeading title={blogEntryData.blogTitle}/>
             <BlogEntryHeadingImage img={blogEntryData.blogTitleImage}/>
             <BlogEntryText body={blogEntryData.blogBody}/>
-            <button onClick={updateCounterUp}>like it!</button>
+            <StyledButton onClick={updateCounterUp}>like it!</StyledButton>
             <p>{likeCount} Leute fanden´s witzig</p>
-            <button onClick={updateCounterDown}>hate it!</button>
+            <StyledButton onClick={updateCounterDown}>hate it!</StyledButton>
             <p>{disLikeCount} Leute fanden´s doof</p>
         </article>
     )

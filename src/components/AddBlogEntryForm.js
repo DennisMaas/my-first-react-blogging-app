@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {StyledButton} from "./StyledButton";
 
 export default function AddBlogEntryForm({onAddBlogEntry}){
     const  [blogTitle, setBlogTitle] = useState("");
@@ -24,7 +25,13 @@ export default function AddBlogEntryForm({onAddBlogEntry}){
                    onChange={event => setBlogBody(event.target.value)}/>
         </label>
 
-        <button disabled={blogTitle.length === 0 && blogBody.length === 0} type={"button"} onClick={sendData}>Submit</button>
+        <StyledButton
+            disabled={
+                blogTitle.length === 0 && blogBody.length === 0
+            }
+            type={"button"} onClick={
+                sendData}
+        >Submit</StyledButton>
     </form>
 
 
