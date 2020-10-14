@@ -15,20 +15,21 @@ code {
 article {
   padding: 1em;
   margin: 2em 1em 1em 1em;
+
 }
 
 
 .blogentryheadingimage {
   min-height: 15em;
   max-height: 20em;
-  margin-bottom: 1.5em;
-  text-align: center;
+
+  margin: 0 auto;
 }
 
 
 .blogentryheading {
   font-family: 'Libre Baskerville', serif;
   font-size: xx-large;
-  text-align: center;
 }
+
 

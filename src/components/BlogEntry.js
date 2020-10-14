@@ -14,7 +14,7 @@ function BlogEntry({blogEntryData}){
     }
     return (
         <article className={"blogarticle"}>
-            <span><BlogEntryHeading title={blogEntryData.blogTitle}/></span>
+            <BlogEntryHeading title={blogEntryData.blogTitle}/>
             <BlogEntryHeadingImage img={blogEntryData.blogTitleImage}/>
             <BlogEntryText body={blogEntryData.blogBody}/>
             <button onClick={updateCounterUp}>like it!</button>

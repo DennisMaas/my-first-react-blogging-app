@@ -23,7 +23,8 @@ export default function AddBlogEntryForm({onAddBlogEntry}){
             <input value={blogBody}
                    onChange={event => setBlogBody(event.target.value)}/>
         </label>
-        <button type={"button"} onClick={sendData}>Submit</button>
+
+        <button disabled={blogTitle.length === 0 && blogBody.length === 0} type={"button"} onClick={sendData}>Submit</button>
     </form>
 
 

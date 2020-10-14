@@ -16,7 +16,6 @@ function App() {
       <AddBlogEntryForm onAddBlogEntry={addToBlogList}/>
 
       {blogList
-         // .filter(blogEntryData => blogEntryData.title.length > 0)
           .map(blogEntryData => <BlogEntry key={blogEntryData.id} blogEntryData={blogEntryData}/>) }
     </div>
   );
