@@ -1,13 +1,34 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+article {
+  padding: 1em;
+  margin: 2em 1em 1em 1em;
+}
+
+
+.blogentryheadingimage {
+  min-height: 15em;
+  max-height: 20em;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+
+.blogentryheading {
+  font-family: 'Libre Baskerville', serif;
+  font-size: xx-large;
+  text-align: center;
+}
+
